@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin Dashboard</title></head>
+<body>
+  <h1>Welcome Admin</h1>
+  <button onclick="logout()">Logout</button>
+  <script>
+    const user = JSON.parse(localStorage.getItem('danceUser'));
+    if (!user || user.role !== 'admin') location.href = 'index.html';
+    function logout() {
+      localStorage.removeItem('danceUser');
+      location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

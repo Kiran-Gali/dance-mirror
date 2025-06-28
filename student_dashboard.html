@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Student Dashboard</title></head>
+<body>
+  <h1>Welcome Student</h1>
+  <button onclick="logout()">Logout</button>
+  <script>
+    const user = JSON.parse(localStorage.getItem('danceUser'));
+    if (!user || user.role !== 'student') location.href = 'index.html';
+    function logout() {
+      localStorage.removeItem('danceUser');
+      location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
